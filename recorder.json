@@ -1,0 +1,7 @@
+{
+  "rtp_server_ip": "192.168.1.104",
+  "rtp_port": "8011",
+  "server_ip": "192.168.1.4",
+  "threshold": 0.76,
+  "bitrate": 150
+}

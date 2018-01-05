@@ -1,0 +1,222 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: wangr
+Class-Path: /home/hadoop/wrp/RealtimeStreamPublish/java/lib/javacv-pla
+ tform-1.3.2.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/javac
+ v-1.3.2.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/javacpp-1
+ .3.2.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/opencv-3.2.0
+ -1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1
+ -1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/flycapture-2
+ .9.3.43-1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libdc
+ 1394-2.2.4-1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/li
+ bfreenect-0.5.3-1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/l
+ ib/libfreenect2-0.2.0-1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/librealsense-1.9.6-1.3.jar /home/hadoop/wrp/RealtimeStreamPu
+ blish/java/lib/videoinput-0.200-1.3.jar /home/hadoop/wrp/RealtimeStre
+ amPublish/java/lib/artoolkitplus-2.3.1-1.3.jar /home/hadoop/wrp/Realt
+ imeStreamPublish/java/lib/flandmark-1.07-1.3.jar /home/hadoop/wrp/Rea
+ ltimeStreamPublish/java/lib/opencv-platform-3.2.0-1.3.jar /home/hadoo
+ p/wrp/RealtimeStreamPublish/java/lib/opencv-3.2.0-1.3-android-arm.jar
+  /home/hadoop/wrp/RealtimeStreamPublish/java/lib/opencv-3.2.0-1.3-and
+ roid-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/opencv-3
+ .2.0-1.3-linux-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/li
+ b/opencv-3.2.0-1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeStreamPu
+ blish/java/lib/opencv-3.2.0-1.3-linux-armhf.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/opencv-3.2.0-1.3-linux-ppc64le.jar /home/h
+ adoop/wrp/RealtimeStreamPublish/java/lib/opencv-3.2.0-1.3-macosx-x86_
+ 64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/opencv-3.2.0-1
+ .3-windows-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/op
+ encv-3.2.0-1.3-windows-x86_64.jar /home/hadoop/wrp/RealtimeStreamPubl
+ ish/java/lib/ffmpeg-platform-3.2.1-1.3.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/ffmpeg-3.2.1-1.3-android-arm.jar /home/hadoop/w
+ rp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1-1.3-android-x86.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1-1.3-linux-
+ x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1-
+ 1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/
+ ffmpeg-3.2.1-1.3-linux-armhf.jar /home/hadoop/wrp/RealtimeStreamPubli
+ sh/java/lib/ffmpeg-3.2.1-1.3-linux-ppc64le.jar /home/hadoop/wrp/Realt
+ imeStreamPublish/java/lib/ffmpeg-3.2.1-1.3-macosx-x86_64.jar /home/ha
+ doop/wrp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1-1.3-windows-x86.
+ jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/ffmpeg-3.2.1-1.3-
+ windows-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/fl
+ ycapture-platform-2.9.3.43-1.3.jar /home/hadoop/wrp/RealtimeStreamPub
+ lish/java/lib/flycapture-2.9.3.43-1.3-linux-x86.jar /home/hadoop/wrp/
+ RealtimeStreamPublish/java/lib/flycapture-2.9.3.43-1.3-linux-x86_64.j
+ ar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/flycapture-2.9.3.4
+ 3-1.3-linux-armhf.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib
+ /flycapture-2.9.3.43-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStr
+ eamPublish/java/lib/flycapture-2.9.3.43-1.3-windows-x86_64.jar /home/
+ hadoop/wrp/RealtimeStreamPublish/java/lib/libdc1394-platform-2.2.4-1.
+ 3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libdc1394-2.2.4
+ -1.3-linux-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/li
+ bdc1394-2.2.4-1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeStreamPub
+ lish/java/lib/libdc1394-2.2.4-1.3-linux-armhf.jar /home/hadoop/wrp/Re
+ altimeStreamPublish/java/lib/libdc1394-2.2.4-1.3-linux-ppc64le.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/libdc1394-2.2.4-1.3-mac
+ osx-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libdc1
+ 394-2.2.4-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/libdc1394-2.2.4-1.3-windows-x86_64.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/libfreenect-platform-0.5.3-1.3.jar /home/h
+ adoop/wrp/RealtimeStreamPublish/java/lib/libfreenect-0.5.3-1.3-linux-
+ x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libfreenect-0
+ .5.3-1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java
+ /lib/libfreenect-0.5.3-1.3-linux-armhf.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/libfreenect-0.5.3-1.3-linux-ppc64le.jar /home/h
+ adoop/wrp/RealtimeStreamPublish/java/lib/libfreenect-0.5.3-1.3-macosx
+ -x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libfreene
+ ct-0.5.3-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/j
+ ava/lib/libfreenect-0.5.3-1.3-windows-x86_64.jar /home/hadoop/wrp/Rea
+ ltimeStreamPublish/java/lib/libfreenect2-platform-0.2.0-1.3.jar /home
+ /hadoop/wrp/RealtimeStreamPublish/java/lib/libfreenect2-0.2.0-1.3-lin
+ ux-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/libfreenec
+ t2-0.2.0-1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/librealsense-platform-1.9.6-1.3.jar /home/hadoop/wrp/Realtim
+ eStreamPublish/java/lib/librealsense-1.9.6-1.3-linux-x86.jar /home/ha
+ doop/wrp/RealtimeStreamPublish/java/lib/librealsense-1.9.6-1.3-linux-
+ x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/videoinput
+ -platform-0.200-1.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/l
+ ib/videoinput-0.200-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStre
+ amPublish/java/lib/videoinput-0.200-1.3-windows-x86_64.jar /home/hado
+ op/wrp/RealtimeStreamPublish/java/lib/artoolkitplus-platform-2.3.1-1.
+ 3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/artoolkitplus-2
+ .3.1-1.3-android-arm.jar /home/hadoop/wrp/RealtimeStreamPublish/java/
+ lib/artoolkitplus-2.3.1-1.3-android-x86.jar /home/hadoop/wrp/Realtime
+ StreamPublish/java/lib/artoolkitplus-2.3.1-1.3-linux-x86.jar /home/ha
+ doop/wrp/RealtimeStreamPublish/java/lib/artoolkitplus-2.3.1-1.3-linux
+ -x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/artoolkit
+ plus-2.3.1-1.3-linux-armhf.jar /home/hadoop/wrp/RealtimeStreamPublish
+ /java/lib/artoolkitplus-2.3.1-1.3-linux-ppc64le.jar /home/hadoop/wrp/
+ RealtimeStreamPublish/java/lib/artoolkitplus-2.3.1-1.3-macosx-x86_64.
+ jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/artoolkitplus-2.3
+ .1-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/li
+ b/artoolkitplus-2.3.1-1.3-windows-x86_64.jar /home/hadoop/wrp/Realtim
+ eStreamPublish/java/lib/flandmark-platform-1.07-1.3.jar /home/hadoop/
+ wrp/RealtimeStreamPublish/java/lib/flandmark-1.07-1.3-android-arm.jar
+  /home/hadoop/wrp/RealtimeStreamPublish/java/lib/flandmark-1.07-1.3-a
+ ndroid-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/flandm
+ ark-1.07-1.3-linux-x86.jar /home/hadoop/wrp/RealtimeStreamPublish/jav
+ a/lib/flandmark-1.07-1.3-linux-x86_64.jar /home/hadoop/wrp/RealtimeSt
+ reamPublish/java/lib/flandmark-1.07-1.3-linux-armhf.jar /home/hadoop/
+ wrp/RealtimeStreamPublish/java/lib/flandmark-1.07-1.3-linux-ppc64le.j
+ ar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/flandmark-1.07-1.3
+ -macosx-x86_64.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/fl
+ andmark-1.07-1.3-windows-x86.jar /home/hadoop/wrp/RealtimeStreamPubli
+ sh/java/lib/flandmark-1.07-1.3-windows-x86_64.jar /home/hadoop/wrp/Re
+ altimeStreamPublish/java/lib/core-0.26.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/georegression-0.12.jar /home/hadoop/wrp/Realtim
+ eStreamPublish/java/lib/ddogleg-0.10.jar /home/hadoop/wrp/RealtimeStr
+ eamPublish/java/lib/core-0.30.jar /home/hadoop/wrp/RealtimeStreamPubl
+ ish/java/lib/dense64-0.30.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/simple-0.30.jar /home/hadoop/wrp/RealtimeStreamPublish/java/
+ lib/equation-0.30.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib
+ /calibration-0.26.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib
+ /feature-0.26.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/geo
+ -0.26.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/io-0.26.jar
+  /home/hadoop/wrp/RealtimeStreamPublish/java/lib/xstream-1.4.7.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/xmlpull-1.1.3.1.jar /ho
+ me/hadoop/wrp/RealtimeStreamPublish/java/lib/xpp3_min-1.1.4c.jar /hom
+ e/hadoop/wrp/RealtimeStreamPublish/java/lib/snakeyaml-1.17.jar /home/
+ hadoop/wrp/RealtimeStreamPublish/java/lib/ip-0.26.jar /home/hadoop/wr
+ p/RealtimeStreamPublish/java/lib/learning-0.26.jar /home/hadoop/wrp/R
+ ealtimeStreamPublish/java/lib/recognition-0.26.jar /home/hadoop/wrp/R
+ ealtimeStreamPublish/java/lib/main-0.3.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/models-0.3.jar /home/hadoop/wrp/RealtimeStreamP
+ ublish/java/lib/learning-0.3.jar /home/hadoop/wrp/RealtimeStreamPubli
+ sh/java/lib/io-0.3.jar /home/hadoop/wrp/RealtimeStreamPublish/java/li
+ b/jarchivelib-0.5.0.jar /home/hadoop/wrp/RealtimeStreamPublish/java/l
+ ib/zip4j-1.3.2.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/sf
+ m-0.26.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/visualize-
+ 0.26.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/kafka_2.10-0
+ .10.0.0.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/zkclient-
+ 0.8.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/scala-library
+ -2.10.6.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/slf4j-log
+ 4j12-1.7.21.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/metri
+ cs-core-2.2.0.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/kaf
+ ka-clients-0.10.0.0.jar /home/hadoop/wrp/RealtimeStreamPublish/java/l
+ ib/lz4-1.3.0.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/snap
+ py-java-1.1.2.4.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/j
+ opt-simple-4.9.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/zo
+ okeeper-3.4.6.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/jli
+ ne-0.9.94.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/hbase-c
+ lient-1.2.1.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/hbase
+ -annotations-1.2.1.jar /home/hadoop/wrp/RealtimeStreamPublish/java/li
+ b/hbase-common-1.2.1.jar /home/hadoop/wrp/RealtimeStreamPublish/java/
+ lib/hbase-protocol-1.2.1.jar /home/hadoop/wrp/RealtimeStreamPublish/j
+ ava/lib/commons-codec-1.9.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/commons-io-2.4.jar /home/hadoop/wrp/RealtimeStreamPublish/ja
+ va/lib/commons-lang-2.6.jar /home/hadoop/wrp/RealtimeStreamPublish/ja
+ va/lib/commons-logging-1.2.jar /home/hadoop/wrp/RealtimeStreamPublish
+ /java/lib/guava-12.0.1.jar /home/hadoop/wrp/RealtimeStreamPublish/jav
+ a/lib/protobuf-java-2.5.0.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/netty-all-4.0.23.Final.jar /home/hadoop/wrp/RealtimeStreamPu
+ blish/java/lib/htrace-core-3.1.0-incubating.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/jackson-mapper-asl-1.9.13.jar /home/hadoop
+ /wrp/RealtimeStreamPublish/java/lib/jcodings-1.0.8.jar /home/hadoop/w
+ rp/RealtimeStreamPublish/java/lib/joni-2.1.2.jar /home/hadoop/wrp/Rea
+ ltimeStreamPublish/java/lib/hadoop-auth-2.5.1.jar /home/hadoop/wrp/Re
+ altimeStreamPublish/java/lib/apacheds-kerberos-codec-2.0.0-M15.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/apacheds-i18n-2.0.0-M15
+ .jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/api-asn1-api-1.0
+ .0-M20.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/api-util-1
+ .0.0-M20.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/hadoop-m
+ apreduce-client-core-2.5.1.jar /home/hadoop/wrp/RealtimeStreamPublish
+ /java/lib/hadoop-yarn-common-2.5.1.jar /home/hadoop/wrp/RealtimeStrea
+ mPublish/java/lib/hadoop-yarn-api-2.5.1.jar /home/hadoop/wrp/Realtime
+ StreamPublish/java/lib/jaxb-api-2.2.2.jar /home/hadoop/wrp/RealtimeSt
+ reamPublish/java/lib/stax-api-1.0-2.jar /home/hadoop/wrp/RealtimeStre
+ amPublish/java/lib/activation-1.1.jar /home/hadoop/wrp/RealtimeStream
+ Publish/java/lib/findbugs-annotations-1.3.9-1.jar /home/hadoop/wrp/Re
+ altimeStreamPublish/java/lib/junit-4.12.jar /home/hadoop/wrp/Realtime
+ StreamPublish/java/lib/hamcrest-core-1.3.jar /home/hadoop/wrp/Realtim
+ eStreamPublish/java/lib/gson-2.7.jar /home/hadoop/wrp/RealtimeStreamP
+ ublish/java/lib/httpcore-4.4.7.jar /home/hadoop/wrp/RealtimeStreamPub
+ lish/java/lib/httpclient-4.5.3.jar /home/hadoop/wrp/RealtimeStreamPub
+ lish/java/lib/hadoop-common-2.7.2.jar /home/hadoop/wrp/RealtimeStream
+ Publish/java/lib/hadoop-annotations-2.7.2.jar /home/hadoop/wrp/Realti
+ meStreamPublish/java/lib/commons-cli-1.2.jar /home/hadoop/wrp/Realtim
+ eStreamPublish/java/lib/commons-math3-3.1.1.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/xmlenc-0.52.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/commons-httpclient-3.1.jar /home/hadoop/wrp/Rea
+ ltimeStreamPublish/java/lib/commons-net-3.1.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/commons-collections-3.2.2.jar /home/hadoop
+ /wrp/RealtimeStreamPublish/java/lib/servlet-api-2.5.jar /home/hadoop/
+ wrp/RealtimeStreamPublish/java/lib/jetty-6.1.26.jar /home/hadoop/wrp/
+ RealtimeStreamPublish/java/lib/jetty-util-6.1.26.jar /home/hadoop/wrp
+ /RealtimeStreamPublish/java/lib/jsp-api-2.1.jar /home/hadoop/wrp/Real
+ timeStreamPublish/java/lib/jersey-core-1.9.jar /home/hadoop/wrp/Realt
+ imeStreamPublish/java/lib/jersey-json-1.9.jar /home/hadoop/wrp/Realti
+ meStreamPublish/java/lib/jettison-1.1.jar /home/hadoop/wrp/RealtimeSt
+ reamPublish/java/lib/jaxb-impl-2.2.3-1.jar /home/hadoop/wrp/RealtimeS
+ treamPublish/java/lib/jackson-jaxrs-1.8.3.jar /home/hadoop/wrp/Realti
+ meStreamPublish/java/lib/jackson-xc-1.8.3.jar /home/hadoop/wrp/Realti
+ meStreamPublish/java/lib/jersey-server-1.9.jar /home/hadoop/wrp/Realt
+ imeStreamPublish/java/lib/asm-3.1.jar /home/hadoop/wrp/RealtimeStream
+ Publish/java/lib/log4j-1.2.17.jar /home/hadoop/wrp/RealtimeStreamPubl
+ ish/java/lib/jets3t-0.9.0.jar /home/hadoop/wrp/RealtimeStreamPublish/
+ java/lib/java-xmlbuilder-0.4.jar /home/hadoop/wrp/RealtimeStreamPubli
+ sh/java/lib/commons-configuration-1.6.jar /home/hadoop/wrp/RealtimeSt
+ reamPublish/java/lib/commons-digester-1.8.jar /home/hadoop/wrp/Realti
+ meStreamPublish/java/lib/commons-beanutils-1.7.0.jar /home/hadoop/wrp
+ /RealtimeStreamPublish/java/lib/commons-beanutils-core-1.8.0.jar /hom
+ e/hadoop/wrp/RealtimeStreamPublish/java/lib/slf4j-api-1.7.10.jar /hom
+ e/hadoop/wrp/RealtimeStreamPublish/java/lib/jackson-core-asl-1.9.13.j
+ ar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/avro-1.7.4.jar /ho
+ me/hadoop/wrp/RealtimeStreamPublish/java/lib/paranamer-2.3.jar /home/
+ hadoop/wrp/RealtimeStreamPublish/java/lib/jsch-0.1.42.jar /home/hadoo
+ p/wrp/RealtimeStreamPublish/java/lib/curator-client-2.7.1.jar /home/h
+ adoop/wrp/RealtimeStreamPublish/java/lib/curator-recipes-2.7.1.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/curator-framework-2.7.1
+ .jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/jsr305-3.0.0.jar
+  /home/hadoop/wrp/RealtimeStreamPublish/java/lib/commons-compress-1.4
+ .1.jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/xz-1.0.jar /ho
+ me/hadoop/wrp/RealtimeStreamPublish/java/lib/hadoop-hdfs-2.7.2.jar /h
+ ome/hadoop/wrp/RealtimeStreamPublish/java/lib/commons-daemon-1.0.13.j
+ ar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/netty-3.6.2.Final.
+ jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/xercesImpl-2.9.1.
+ jar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/xml-apis-1.3.04.j
+ ar /home/hadoop/wrp/RealtimeStreamPublish/java/lib/leveldbjni-all-1.8
+ .jar
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_144
+Main-Class: com.oceanai.main.StreamPublish
+
