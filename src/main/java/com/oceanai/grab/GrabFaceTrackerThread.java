@@ -9,8 +9,10 @@ import org.bytedeco.javacv.Java2DFrameConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,22 +30,25 @@ public class GrabFaceTrackerThread implements Runnable {
 
     //File logger
     private FileLogger fileLogger;
-    //private Logger logger = LoggerFactory.getLogger(GrabFaceTrackerThread.class);
 
     //converter
     private Java2DFrameConverter mImageConverter;
-    private RecordThread recordThread ;
-    //
-    //protected List<Frame> frameList = new ArrayList<>();
     private LinkedBlockingQueue<BufferedImage> frameList;
 
-    public GrabFaceTrackerThread(LinkedBlockingQueue<BufferedImage> frameList) {
-        fileLogger = new FileLogger("/home/hadoop/realtime_recorder_logs/GrabFaceTrackerThread.log");
-        //fileLogger = new FileLogger("E:\\HUST\\HUST-BitData\\Github\\RealtimeStrreamPublish\\log\\GrabFaceTrackerThread.log");
-        //faceTool = new FaceTool("/home/hadoop/storm-projects/lib/config/search.json", fileLogger);
+    private  BufferedImage testBufferedImage = null;
+
+    public GrabFaceTrackerThread(LinkedBlockingQueue<BufferedImage> frameList, String logDir) {
+        if (!logDir.endsWith("/")) {
+            logDir = logDir + "/";
+        }
+        fileLogger = new FileLogger(logDir + "GrabFaceTrackerThread.log");
         this.frameList = frameList;
         mImageConverter = new Java2DFrameConverter();
-        //stringFont = new Font("楷体", Font.PLAIN, 18);
+        try {
+            testBufferedImage = ImageIO.read(new File("/home/hadoop/wrp/RealtimeStreamPublish/java/images/loading.jpg"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public GrabFaceTrackerThread(String location) {
@@ -71,25 +76,26 @@ public class GrabFaceTrackerThread implements Runnable {
         grabber.setOption("rtsp_transport", "tcp");
         try {
             grabber.start();
-            /*if (recorder == null) {
-                recorder = recorderInit("rtp://192.168.1.104:80", grabber.getFrameRate(), grabber.getImageWidth(), grabber.getImageHeight(), grabber.getVideoBitrate());
-                recorder.start();
-            }*/
         } catch (Exception e) {
-            //e.printStackTrace();
             System.out.println(e.getMessage());
         }
-
         running = true;
     }
 
     @Override
     public void run() {
-        try {
             System.out.println("Grab thread start!");
             System.out.println("Video stream width is " + grabber.getImageWidth() + " height is " + grabber.getImageHeight() + " bitrate is " + grabber.getVideoBitrate());
             while (running) {
-                Frame frame = grabber.grabImage();
+                Frame frame = null;
+                try {
+                 frame = grabber.grabImage();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    if (testBufferedImage != null) {
+                        frame = mImageConverter.convert(testBufferedImage);
+                    }
+                }
                 if (frame != null) {
                     BufferedImage bufferedImage = new BufferedImage(1280, 720, BufferedImage.TYPE_3BYTE_BGR);
                     Graphics graphics = bufferedImage.getGraphics();
@@ -99,7 +105,11 @@ public class GrabFaceTrackerThread implements Runnable {
                         if (frameList.size() == 100) {
                             continue;
                         }
-                        frameList.put(bufferedImage);
+                        try {
+                            frameList.put(bufferedImage);
+                        } catch (InterruptedException e) {
+                            System.out.println(e.getMessage());
+                        }
                         System.out.println("Grab Frame List size is " + frameList.size());
                         fileLogger.log(TAG, "Grab Frame List size is " + frameList.size());
                         /*if (frameList.size() >= 100) {
@@ -113,10 +123,7 @@ public class GrabFaceTrackerThread implements Runnable {
             }
             System.out.println("end");
 
-        } catch (Exception e) {
-            //e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
+
     }
 
     public boolean setLocation(String location) {

@@ -10,26 +10,29 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Extractor extends Thread {
     private static final String TAG = "Extractor";
-    private FileLogger fileLogger = new FileLogger("/home/hadoop/realtime_recorder_logs/Extractor.log");
+    private FileLogger fileLogger;
     private LinkedBlockingQueue<BufferedImage> frameQueue;
     private LinkedBlockingQueue<BufferedImage> frameQueue2;
-    private boolean running = false;
-    private float threas = 0.75f;
+    private String logDir = "";
 
-    public Extractor(LinkedBlockingQueue<BufferedImage> frameQueue, LinkedBlockingQueue<BufferedImage> frameQueue2) {
+    public Extractor(LinkedBlockingQueue<BufferedImage> frameQueue, LinkedBlockingQueue<BufferedImage> frameQueue2, String logDir) {
         this.frameQueue = frameQueue;
         this.frameQueue2 = frameQueue2;
+        if (!logDir.endsWith("/")) {
+            logDir = logDir + "/";
+        }
+        this.logDir = logDir;
+        fileLogger = new FileLogger(logDir + "Extractor.log");
     }
 
     public void run() {
         Stream operation = null;
         try {
-            operation = new Stream();
+            operation = new Stream(logDir);
         } catch (Exception e) {
-            //e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         fileLogger.log(TAG, "Extractor started!");
-        //running = true;
         while (true) {
             long now = System.currentTimeMillis();
             try {
@@ -53,10 +56,8 @@ public class Extractor extends Thread {
                     }
                 }
             } catch (Exception e1) {
-                //e1.printStackTrace();
+                System.out.println(e1.getMessage());
             }
         }
-
-        //running = false;
     }
 }

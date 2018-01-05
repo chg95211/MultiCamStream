@@ -3,5 +3,6 @@
   "rtp_port": "8011",
   "server_ip": "192.168.1.4",
   "threshold": 0.76,
-  "bitrate": 150
+  "bitrate": 150,
+  "logDir": "/home/hadoop/realtime_recorder_logs/"
 }

@@ -22,7 +22,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class RecordThread implements Runnable {
     private static final String TAG = "RecordThread";
-    private FileLogger fileLogger = new FileLogger("/home/hadoop/realtime_recorder_logs/RecordThread.log");
+    private FileLogger fileLogger ;
     private boolean running = false;
     private LinkedBlockingQueue<BufferedImage> frameQueue2;
 
@@ -30,18 +30,23 @@ public class RecordThread implements Runnable {
     private Java2DFrameConverter converter;
     private String destLocation = "";
     private int bitrate = 40;
+    private boolean isRestarting = false;
+    private BufferedImage testBufferedImage = null;
     //private BufferedImage bufferedImage;
     //private Frame ff;
 
-    public RecordThread(LinkedBlockingQueue<BufferedImage> frameQueue2, int bitrate) {
+    public RecordThread(LinkedBlockingQueue<BufferedImage> frameQueue2, int bitrate, String logDir) {
         this.frameQueue2 = frameQueue2;
         converter = new Java2DFrameConverter();
         this.bitrate = bitrate;
+        if (!logDir.endsWith("/")){
+            logDir = logDir + "/";
+        }
+        fileLogger = new FileLogger(logDir + "RecordThread.log");
         try {
-            //bufferedImage = ImageIO.read(new File("E:\\HUST\\MultiCamsStream\\out\\4.jpg"));
-            //ff = converter.convert(bufferedImage);
+            testBufferedImage = ImageIO.read(new File("/home/hadoop/wrp/RealtimeStreamPublish/java/images/loading.jpg"));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -73,15 +78,19 @@ public class RecordThread implements Runnable {
         running = true;
     }
 
+    public void grabberRestarting(boolean isRestarting) {
+        this.isRestarting = isRestarting;
+    }
+
+
     @Override
     public void run() {
         try {
-            //BufferedImage testBufferedImage = ImageIO.read(new File("/home/hadoop/wrp/RealtimeStreamPublish/java/images/10.jpg"));
             while (running) {
                 long start = System.currentTimeMillis();
-                BufferedImage bufferedImage;
-                /*if (frameQueue2.size() == 0) {
-                    bufferedImage = testBufferedImage;
+                BufferedImage bufferedImage = null;
+                /*if (isRestarting) {
+                    //bufferedImage = testBufferedImage;
                 } else {*/
                     bufferedImage = frameQueue2.poll();
                 //}
@@ -90,8 +99,6 @@ public class RecordThread implements Runnable {
                 }
                 if (bufferedImage != null && recorder != null) {
                     Frame ff = converter.convert(bufferedImage);
-                    //bufferedImage = converter.convert(ff);
-                    //ImageUtils.saveToFile(bufferedImage, "/home/hadoop/wrp/RealtimeStreamPublish/java/images/", "" + count++, "jpg");
                     /*long videoTS = 1000 * (System.currentTimeMillis() - startTime);
                     recorder.setTimestamp(videoTS);*/
                     recorder.record(ff);

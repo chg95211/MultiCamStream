@@ -54,6 +54,11 @@ public class KafkaConsumer implements Runnable {
     private String rtp_port = "8011";
 
     /**
+     * log directory
+     */
+    private String logDir = "";
+
+    /**
      * rtp stream bitrate
      */
     private int bitrate;
@@ -79,7 +84,7 @@ public class KafkaConsumer implements Runnable {
      * @param zookeeper  Kafka的Zookeeper连接字符串
      * @param groupId    该消费者所属group ID的值
      */
-    public KafkaConsumer(String topic, int numThreads, String zookeeper, String groupId, int bitrate, String server, String rtp_port) {
+    public KafkaConsumer(String topic, int numThreads, String zookeeper, String groupId, int bitrate, String server, String rtp_port, String logDir) {
         // 1. 创建Kafka连接器
         this.consumer = Consumer.createJavaConsumerConnector(createConsumerConfig(zookeeper, groupId));
         // 2. 数据赋值
@@ -88,6 +93,7 @@ public class KafkaConsumer implements Runnable {
         this.bitrate = bitrate;
         this.rtp_server_ip = server;
         this.rtp_port = rtp_port;
+        this.logDir = logDir;
     }
 
     @Override
@@ -184,17 +190,10 @@ public class KafkaConsumer implements Runnable {
         private String streamLocation = "";
 
         /**
-         * ip
-         */
-        private String ipAddress = "";
-        private String preIPAddress = "";
-
-        /**
          * kafka 消息（ip*streamLocation）
          */
         private String kafkaMessage = "";
 
-        //private GrabThread grabThread;
         private GrabFaceTrackerThread grabThread;
         private RecordThread recordThread;
         private Extractor ex;
@@ -208,11 +207,11 @@ public class KafkaConsumer implements Runnable {
             this.stream = stream;
             this.threadNumber = threadNumber;
 
-            grabThread = new GrabFaceTrackerThread(frames);
-            ex = new Extractor(frames, detectedFrames);
+            grabThread = new GrabFaceTrackerThread(frames, logDir);
+            ex = new Extractor(frames, detectedFrames, logDir);
             ex.start();
             //br.start();
-            recordThread = new RecordThread(detectedFrames, bitrate);
+            recordThread = new RecordThread(detectedFrames, bitrate, logDir);
             //System.out.println("ServerIP is " + rtp_server_ip + " RTP port is " + rtp_port);
             recordThread.setLocation(rtp_server_ip, rtp_port);
             if (record_t != null) {
@@ -243,46 +242,17 @@ public class KafkaConsumer implements Runnable {
                     continue;
                 }
 
-                ipAddress = msg[0];
                 streamLocation = msg[1];
 
-                /*if (!ipAddress.equals(preIPAddress)) {
-                    mLogger.log(TAG+ "@" + this.threadNumber, "Client changed!New IP is " + ipAddress + ", previous IP is " + preIPAddress);
-                    System.out.println("IP changed");
-                    recordThread.stop();
-                    grabThread.stop();
-                    detectedFrames.clear();
-                    frames.clear();
+                recordThread.grabberRestarting(true);
 
-                    grabThread.setLocation(streamLocation);
-                    if (grab_t != null) {
-                        grab_t = null;
-                    }
-                    grab_t = new Thread(grabThread);
-                    grab_t.start();
-
-                    try {
-                        Thread.sleep(500);
-                    }catch (Exception e) {
-
-                    }
-                    recordThread.setLocation(ipAddress);
-
-                    if (record_t != null) {
-                        record_t = null;
-                    }
-                    record_t = new Thread(recordThread);
-                    record_t.start();
-                    this.preIPAddress = ipAddress;
-                    //FileHelper.changeSDPFile(ipAddress);
-
-                } else {*/
                 grabThread.setLocation(streamLocation);
                 if (grab_t != null) {
                     grab_t = null;
                 }
                 grab_t = new Thread(grabThread);
                 grab_t.start();
+                recordThread.grabberRestarting(false);
                 if (!recordThread.isRunning()) {
                     recordThread.setLocation(rtp_server_ip, rtp_port);
                     if (record_t != null) {
@@ -291,7 +261,7 @@ public class KafkaConsumer implements Runnable {
                     record_t = new Thread(recordThread);
                     record_t.start();
                 }
-                //}
+
 
                 try {
                     Thread.sleep(2000);

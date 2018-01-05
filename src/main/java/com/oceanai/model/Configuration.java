@@ -6,7 +6,8 @@ package com.oceanai.model;
 public class Configuration {
     public String rtp_server_ip = "localhost";
     public String rtp_port = "8012";
-    public String server_ip = "192.168.1.4";
+    public String server_ip = "cloud04";
     public float threshold = 0.75f;
     public int bitrate = 40;
+    public String logDir = "/home/hadoop/realtime_recorder_logs/";
 }

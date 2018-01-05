@@ -14,7 +14,7 @@ import java.io.File;
  */
 public class StreamPublish {
     public static void main(String[] args) {
-        String zookeeper = "cloud04:2181/kafka";
+        String zookeeper = ":2181/kafka";
         String groupId = "group1";
         String topic = "topic-stream-operation";
         //String topic = "topic-file-storage";
@@ -28,10 +28,10 @@ public class StreamPublish {
             MIH.setThreshold(configuration.threshold);
             System.out.println("Http face api server is " + HttpClientUtil.getUri());
             System.out.println("Threshold is " + MIH.getThreshold());
-            //zookeeper = configuration.server_ip + zookeeper;
+            zookeeper = configuration.server_ip + zookeeper;
         }
 
-        KafkaConsumer example = new KafkaConsumer(topic, threads, zookeeper, groupId, configuration.bitrate, configuration.rtp_server_ip, configuration.rtp_port);
+        KafkaConsumer example = new KafkaConsumer(topic, threads, zookeeper, groupId, configuration.bitrate, configuration.rtp_server_ip, configuration.rtp_port, configuration.logDir);
         new Thread(example).start();
     }
 }

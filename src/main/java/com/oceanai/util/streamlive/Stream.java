@@ -61,14 +61,14 @@ public class Stream implements Serializable {
 
     private FaceTool faceTool;
 
-    private FileLogger fileLogger = new FileLogger("/home/hadoop/realtime_recorder_logs/" + TAG + ".log");
+    private FileLogger fileLogger;
 
     private BASE64Encoder encoder = new BASE64Encoder();
     @SuppressWarnings("unchecked")
-    public Stream() throws Exception {
+    public Stream(String logDir) throws Exception {
         //Face detect and extract
-        //faceTool = FaceTool.getInstance();
         faceTool = new FaceTool();
+        fileLogger = new FileLogger(logDir + TAG + ".log");
         fileLogger.log(TAG, "Face tool init finished! Threshold is " + MIH.getThreshold());
         faceInfos = new ArrayList<>();
         //Tracker init
