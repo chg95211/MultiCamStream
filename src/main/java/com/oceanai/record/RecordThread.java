@@ -82,7 +82,6 @@ public class RecordThread implements Runnable {
         this.isRestarting = isRestarting;
     }
 
-
     @Override
     public void run() {
         try {
