@@ -82,7 +82,7 @@ public class Stream implements Serializable {
         this.resultsPersonInfo = mHBaseHelper.getAllRows(personInfoTable);
         fileLogger.log(TAG, "HBase init finished!");
         //HBase face and person info
-        for (Result resultFace : results) {
+        /*for (Result resultFace : results) {
             String feature = Bytes.toString(resultFace.getValue(Bytes.toBytes(faceInfoFamily), Bytes.toBytes(faceInfoColumns[1])));
             String id = Bytes.toString(resultFace.getValue(Bytes.toBytes(faceInfoFamily), Bytes.toBytes(faceInfoColumns[5])));
             String face_id = Bytes.toString(resultFace.getValue(Bytes.toBytes(faceInfoFamily), Bytes.toBytes(faceInfoColumns[0])));
@@ -100,7 +100,7 @@ public class Stream implements Serializable {
             String name_person = Bytes.toString(resultFace.getValue(Bytes.toBytes(personInfoFamily), Bytes.toBytes(personInfoColumns[0])));
             personInfo.put(key, name_person);
             System.out.println("Person name is " + name_person + " key is " + key);
-        }
+        }*/
     }
 
     @SuppressWarnings("unchecked")
@@ -125,7 +125,8 @@ public class Stream implements Serializable {
             System.out.println("*****************detectFace consumes " + (System.currentTimeMillis() - now) + "ms");
             names = new String[faceInfos.size()];
             now = System.currentTimeMillis();
-            CompareInfo[] compareInfos = faceCompare(faceInfos);
+            //CompareInfo[] compareInfos = faceCompare(faceInfos);
+            CompareInfo[] compareInfos = null;
             if (compareInfos == null) {
                 compareInfos = new CompareInfo[faceInfos.size()];
             }
